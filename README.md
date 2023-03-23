@@ -16,14 +16,14 @@ Each workflow, including the main/merged workflow, use snakemake's suggested dir
 
 ### Instructions
 
-clone repository and move into cloned directory
+Assumes snakemake has been installed. If not, refer to documentation [here](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html) 
+Clone repository and move into cloned directory
 ```
 git clone git@github.com:rhodesch/snakemake-modules-ex.git
-
 cd snakemake-modules-ex
 ```
 
-move into main workflow parent directory
+Move into main workflow parent directory
 ```
 cd hello-goodbye
 ```
@@ -37,12 +37,12 @@ or
 cd goodbye
 ```
 
-test workflow with default values
+Test workflow with default values
 ```
 snakemake -n
 ```
 
-execute workflow with default values
+Execute workflow with default values
 ```
 snakemake -j 1
 ```
