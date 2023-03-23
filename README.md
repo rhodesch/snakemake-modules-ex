@@ -1,6 +1,7 @@
 # snakemake-modules-ex
 Snakemake modules examples
 
+
 Toy example that incorporates 2 snakemake modules into a large workflow.
 
 Independent modules (similar to subworkflows):
