@@ -7,7 +7,7 @@ Independent modules (similar to subworkflows):
 - hello
 - goodbye
 
-merged workflow:
+merged workflow importing subworkflows:
 - hello-goodbye
 
 Uses snakemake's suggested directory structure [here](https://snakemake.readthedocs.io/en/stable/snakefiles/deployment.html#)
