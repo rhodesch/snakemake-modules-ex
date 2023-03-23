@@ -14,11 +14,14 @@ Uses snakemake's suggested directory structure [here](https://snakemake.readthed
 
 Use:
 
-clone repository
+clone repository and move into cloned directory
+```
+git clone git@github.com:rhodesch/snakemake-modules-ex.git
 
-``
+cd snakemake-modules-ex
+```
 
-cd into any workflow directory, e.g. `hello`, `goodbye`, `hello-goodbye`.
+move into any workflow directory, e.g. `hello`, `goodbye`, `hello-goodbye`.
 ```
 cd hello-goodbye
 ```
