@@ -17,6 +17,7 @@ Each workflow, including the main/merged workflow, use snakemake's suggested dir
 ### Instructions
 
 Assumes snakemake has been installed. If not, refer to documentation [here](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html) 
+
 Clone repository and move into cloned directory
 ```
 git clone git@github.com:rhodesch/snakemake-modules-ex.git
