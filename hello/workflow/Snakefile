@@ -1,0 +1,8 @@
+rule all:
+    input: "results/mytask.done"
+
+rule mytask:
+    output:
+        "results/mytask.done"
+    shell:
+        "echo hello > {output}"

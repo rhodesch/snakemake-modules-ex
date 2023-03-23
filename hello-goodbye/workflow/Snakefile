@@ -1,0 +1,38 @@
+from snakemake.utils import min_version
+min_version("6.0")
+
+module hello:
+    snakefile:
+        "../../hello/workflow/Snakefile"
+    prefix:
+        # prefix can be any string, typical use: "results/hello"
+        "results/foo"
+
+use rule * from hello as hello_*
+
+module goodbye:
+    snakefile:
+        "../../goodbye/workflow/Snakefile"
+    prefix:
+        "results/bar"
+
+use rule * from goodbye as goodbye_*
+
+rule merge:
+    input:
+        hello = "results/foo/results/mytask.done",
+        goodbye = "results/bar/results/mytask.done"
+    output:
+        "results/merge/merged.txt"
+    shell:
+        """
+        cat {input.hello} > {output}
+        cat {input.goodbye} >> {output}
+        """
+
+rule all:
+    input:
+        # rules.hello_all.input,
+        # rules.goodbye_all.input,
+        "results/merge/merged.txt",
+    default_target: True
