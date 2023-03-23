@@ -5,14 +5,14 @@ Toy example that incorporates 2 snakemake modules into a larger workflow.
 
 ### Background
 
-Independent modules (similar to subworkflows):
+Independent snakemake workflows:
 - hello
 - goodbye
 
-merged workflow importing subworkflows:
+Main snakemake workflow imports independent workflows as modules (conceptually similar to snakemake subworkflows):
 - hello-goodbye
 
-Uses snakemake's suggested directory structure [here](https://snakemake.readthedocs.io/en/stable/snakefiles/deployment.html#)
+Each workflow, including the main/merged workflow, use snakemake's suggested directory structure [here](https://snakemake.readthedocs.io/en/stable/snakefiles/deployment.html#). A results directory will be created during execution of each snakemake workflow, e.g. `hello`, `goodbye`, `hello-goodbye`.
 
 ### Instructions
 
@@ -23,9 +23,18 @@ git clone git@github.com:rhodesch/snakemake-modules-ex.git
 cd snakemake-modules-ex
 ```
 
-move into any workflow directory, e.g. `hello`, `goodbye`, `hello-goodbye`.
+move into main workflow parent directory
 ```
 cd hello-goodbye
+```
+
+Alternatively, move into the component workflow directories
+```
+cd hello
+```
+or
+```
+cd goodbye
 ```
 
 test workflow with default values
