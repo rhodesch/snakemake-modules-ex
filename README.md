@@ -1,7 +1,9 @@
 # snakemake-modules-ex
 Snakemake modules examples
 
-## Toy example that incorporates 2 snakemake modules into a large workflow.
+Toy example that incorporates 2 snakemake modules into a larger workflow.
+
+### Background
 
 Independent modules (similar to subworkflows):
 - hello
@@ -12,7 +14,7 @@ merged workflow importing subworkflows:
 
 Uses snakemake's suggested directory structure [here](https://snakemake.readthedocs.io/en/stable/snakefiles/deployment.html#)
 
-Use:
+### Instructions
 
 clone repository and move into cloned directory
 ```
