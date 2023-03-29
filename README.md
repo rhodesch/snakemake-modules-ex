@@ -24,12 +24,12 @@ git clone git@github.com:rhodesch/snakemake-modules-ex.git
 cd snakemake-modules-ex
 ```
 
-Move into main workflow parent directory
+Move into main workflow directory
 ```
 cd hello-goodbye
 ```
 
-Alternatively, move into the component workflow directories
+Alternatively, move into the component/subworkflow workflow directories
 ```
 cd hello
 ```
