@@ -55,13 +55,3 @@ snakemake -j 1
 
 The example workflows use Snakemake's suggested workflow directory structure, [here](https://snakemake.readthedocs.io/en/stable/snakefiles/deployment.html)
 
-
-### Relative paths and working dir
-
-Modules paths follow standard Snakemake rules:
-
-`input`, `output`, `params` and `shell` file paths per rule are relative to the working directory. In the the first example above, working dir is `hello-goodbye` or similar.
-
-`scripts` directive in rule directives and `snakefile` in module directives are relative to the main snakefile. In the first example above, these paths would be relative to `hello-goodbye/workflow/Snakefile`
-
-
