@@ -55,3 +55,11 @@ snakemake -j 1
 
 The example workflows use Snakemake's suggested workflow directory structure, [here](https://snakemake.readthedocs.io/en/stable/snakefiles/deployment.html)
 
+### Relative paths
+
+Refer to Snakemake documentation for detailed information about relative paths, [here](https://snakemake.readthedocs.io/en/stable/project_info/faq.html#how-does-snakemake-interpret-relative-paths)
+
+Of note:
+- Snakefile paths for each module are relative to the currently evaluated Snakefile. In the first example above, that would be located `hello-goodbye/workflows/Snakefile`
+
+Params paths are relative to the working directory. In the first example above, that would be located `hello-goodbye`
