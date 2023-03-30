@@ -6,7 +6,7 @@ module hello:
         "../../hello/workflow/Snakefile"
     prefix:
         # prefix can be any string, typical use: "results/hello"
-        "results/foo"
+        "foo"
 
 use rule * from hello as hello_*
 
@@ -14,14 +14,14 @@ module goodbye:
     snakefile:
         "../../goodbye/workflow/Snakefile"
     prefix:
-        "results/bar"
+        "bar"
 
 use rule * from goodbye as goodbye_*
 
 rule merge:
     input:
-        hello = "results/foo/results/mytask.done",
-        goodbye = "results/bar/results/mytask.done"
+        hello = "foo/results/mytask.done",
+        goodbye = "bar/results/mytask.done"
     output:
         "results/merge/merged.txt"
     shell:
