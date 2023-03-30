@@ -60,6 +60,24 @@ The example workflows use Snakemake's suggested workflow directory structure, [h
 Refer to Snakemake documentation for detailed information about relative paths, [here](https://snakemake.readthedocs.io/en/stable/project_info/faq.html#how-does-snakemake-interpret-relative-paths)
 
 Of note:
-- Snakefile paths for each module are relative to the currently evaluated Snakefile. In the first example above, that would be located `hello-goodbye/workflows/Snakefile`
+- Snakefile paths for each module are relative to the currently evaluated Snakefile. In the first example above, that would be located `hello-goodbye/workflows`
 
-Params paths are relative to the working directory. In the first example above, that would be located `hello-goodbye`
+- Paths for `params` and `shell` are relative to the working directory. In the first example above, that would be located `hello-goodbye`. If you are using the `shell:` directive, instead of `script:` for external scripts, include the script path in `params: script = "path/to/script"`, then specify `{params.script}` or similar in the original `shell:` directive. When adding that Snakefile as a module, you can then update the script path as follows:
+
+```
+module other_workflow:
+    # here, plain paths, URLs and the special markers for code hosting providers (see below) are possible.
+    snakefile: "other_workflow/Snakefile"
+    config: config["other-workflow"]
+
+use rule * from other_workflow as other_*
+
+use rule some_task from other_workflow as other_some_task with:
+    params:
+        script = "../path/to/script"
+```
+
+This is needed becase of the modificaiton rules described in more detail [here](https://snakemake.readthedocs.io/en/stable/snakefiles/modularization.html):
+
+By such a modifying use statement, any properties of the rule (input, output, log, params, benchmark, threads, resources, etc.) can be overwritten, except the actual execution step (shell, notebook, script, cwl, or run).
+
