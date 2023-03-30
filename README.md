@@ -79,5 +79,5 @@ use rule some_task from other_workflow as other_some_task with:
 
 This is needed becase of the modificaiton rules described in more detail [here](https://snakemake.readthedocs.io/en/stable/snakefiles/modularization.html):
 
-By such a modifying use statement, any properties of the rule (input, output, log, params, benchmark, threads, resources, etc.) can be overwritten, except the actual execution step (shell, notebook, script, cwl, or run).
+"By such a modifying use statement, any properties of the rule (input, output, log, params, benchmark, threads, resources, etc.) can be overwritten, except the actual execution step (shell, notebook, script, cwl, or run)."
 
